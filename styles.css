@@ -39,7 +39,7 @@ header {
 }
 
 #hero {
-    background-image: url('path/to/hero-image.jpg');
+    background-image: url('images/background.jpg'); /* Path to your background image */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -49,6 +49,7 @@ header {
     color: white;
     text-align: center;
 }
+
 
 .cta-button {
     background-color: #ff6600;
