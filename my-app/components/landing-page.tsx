@@ -10,7 +10,6 @@ const backgroundImage = '/background.jpg';
 export function LandingPageComponent() {
   const { scrollY } = useScroll()
   const y1 = useTransform(scrollY, [0, 300], [0, 200])
-  const y2 = useTransform(scrollY, [0, 300], [0, -200])
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -190,7 +189,7 @@ export function LandingPageComponent() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8">Get in Touch</h2>
           <p className="text-xl mb-8">
-            Interested in partnering with Simone Advisory? We'd love to hear from you.
+            Interested in partnering with Simone Advisory? We&apos;d love to hear from you.
           </p>
           <a
             href="#contact"
