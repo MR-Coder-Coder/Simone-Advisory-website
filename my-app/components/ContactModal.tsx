@@ -32,6 +32,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         setSubmitMessage('There was an error submitting the form. Please try again.')
       }
     } catch (error) {
+      console.error('Form submission error:', error)  // Log the error here
       setSubmitMessage('There was an error submitting the form. Please try again.')
     } finally {
       setIsSubmitting(false)
