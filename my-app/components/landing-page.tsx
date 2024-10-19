@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 const backgroundImage = '/background.jpg';
+const video = '/video.mp4';
 
 
 export function LandingPageComponent() {
@@ -91,7 +92,7 @@ export function LandingPageComponent() {
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover"
                 >
-                  <source src={backgroundImage} type="video/mp4" />
+                  <source src={video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               ) : (
