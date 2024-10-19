@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
+import ContactModal from '../components/ContactModal'
 const backgroundImage = '/background.jpg';
 const video = '/video.mp4';
-
+const logo = '/logo.png';  // Add this line
 
 export function LandingPageComponent() {
   const { scrollY } = useScroll()
@@ -16,6 +17,8 @@ export function LandingPageComponent() {
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const [isModalOpen, setIsModalOpen] = useState(false)  // Add this state
 
   const [playVideo, setPlayVideo] = useState(false)
 
@@ -39,6 +42,13 @@ export function LandingPageComponent() {
           }}
         />
         <div className="relative z-10 text-center text-black">
+          <Image
+            src={logo}
+            alt="Simone Advisory Logo"
+            width={200}  // Adjust this value as needed
+            height={100}  // Adjust this value as needed
+            className="mx-auto mb-6"  // Add margin-bottom for spacing
+          />
           <h1 className="text-6xl font-bold mb-4">Simone Advisory</h1>
           <p className="text-2xl">Maximizing Growth Potential in UK Human Capital</p>
         </div>
@@ -192,14 +202,17 @@ export function LandingPageComponent() {
           <p className="text-xl mb-8">
             Interested in partnering with Simone Advisory? We&apos;d love to hear from you.
           </p>
-          <a
-            href="#contact"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="bg-white text-gray-800 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300"
           >
             Contact Us
-          </a>
+          </button>
         </div>
       </section>
+
+      {/* Add the ContactModal component */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
